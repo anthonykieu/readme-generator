@@ -3,16 +3,17 @@ function generateMarkdown(data) {
   return `
   # ${data.title}
 
-  ## Table of Contents
-  * [Description] (#description)
-  * [Installation] (#installation)
-  * [Usage] (#usage)
-  * [License] (#license)
-  * [Contributing] (#contributing)
-  * [Questions] (#questions)
+  ${data.license.badge}
 
   ## Description
   ${data.description}
+
+  ## Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Questions](#questions)
 
   ## Installation
   ${data.installation}
@@ -21,7 +22,8 @@ function generateMarkdown(data) {
   ${data.usage}
 
   ## License
-  ${data.license}
+  ${data.license.text}</br>
+  ${data.license.url}
 
   ## Questions
   If you would like further information, you can go to my Github profile at ${data.github}.

@@ -38,38 +38,96 @@ const questions = () => {
         {
             type: 'input',
             name: 'title',
-            message: 'What is the name of your project?'
+            message: 'What is the name of your project?',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter name of your project!');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'description',
-            message: 'Provide a description of the project (Required)'
+            message: 'Provide a description of the project (Required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a project description!');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'installation',
-            message: 'Provide instructions for installation (Required)'
+            message: 'Provide instructions for installation (Required)',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please provide installation instructions!');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'usage',
-            message: 'Provide how to use it'
+            message: 'Provide how to use it',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please provide instructions on how to use it!');
+                    return false;
+                }
+            }
         },
         {
             type: 'list',
             name: 'license',
             message: 'Which licenses apply',
-            choices: ['MIT', 'ISC']
+            choices: [
+                {
+                    name: 'MIT',
+                    value: {
+                        text: 'MIT',
+                        url: "https://choosealicense.com/licenses/mit/",
+                        badge: "https://img.shields.io/badge/MIT-License-orange"
+                    } 
+                },
+                {
+                    name: 'GNU AGPLv3',
+                    value: {
+                        text: 'GNU AGPLv3',
+                        url: "https://choosealicense.com/licenses/agpl-3.0/",
+                        badge: "https://img.shields.io/badge/GNU_AGPv3-License-orange"
+                    }
+                },
+                {
+                    name: 'Mozilla',
+                    value: {
+                        text: 'Mozilla',
+                        url: "https://choosealicense.com/licenses/mpl-2.0/",
+                        badge: "https://img.shields.io/badge/Mozilla-License-orange"
+                    } 
+                },
+                {
+                    name: 'The Unlicense',
+                    value: {
+                        text: 'The Unlicense',
+                        url: "https://choosealicense.com/licenses/unlicense/",
+                        badge: "https://img.shields.io/badge/Unlicense-License-orange"
+                    } 
+                }
+            ]
         }
     ])
-    // .then(answers => console.log(answers));
-    // return generateMarkdown(data);
-};
-// questions().then(answers => console.log(answers));
-
-// questions()
-
-
+}; 
 // function to write README file
 const writeToFile = (fileName, data) => {
 
@@ -90,6 +148,7 @@ const writeToFile = (fileName, data) => {
         });
     });
 };
+
 // function to initialize program
 function init() {
     questions()
