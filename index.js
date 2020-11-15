@@ -11,6 +11,19 @@ const questions = () => {
     return inquirer.prompt([
         {
             type: 'input',
+            name: 'title',
+            message: 'What is the name of your project?',
+            validate: nameInput => {
+                if (nameInput) {
+                    return true;
+                } else {
+                    console.log('Please enter name of your project!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
             name: 'github',
             message: 'What is the link to your Github profile?',
             validate: nameInput => {
@@ -31,19 +44,6 @@ const questions = () => {
                     return true;
                 } else {
                     console.log('Please enter your email address!');
-                    return false;
-                }
-            }
-        },
-        {
-            type: 'input',
-            name: 'title',
-            message: 'What is the name of your project?',
-            validate: nameInput => {
-                if (nameInput) {
-                    return true;
-                } else {
-                    console.log('Please enter name of your project!');
                     return false;
                 }
             }
