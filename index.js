@@ -51,7 +51,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'description',
-            message: 'Provide a description of the project (Required)',
+            message: 'Provide a description of the project!',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -64,7 +64,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'installation',
-            message: 'Provide instructions for installation (Required)',
+            message: 'Provide instructions for installation!',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -77,7 +77,7 @@ const questions = () => {
         {
             type: 'input',
             name: 'usage',
-            message: 'Provide how to use it',
+            message: 'Provide how to use it!',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -97,7 +97,7 @@ const questions = () => {
                     value: {
                         text: 'MIT',
                         url: "https://choosealicense.com/licenses/mit/",
-                        badge: "https://img.shields.io/badge/MIT-License-orange"
+                        badge: "![NPM](https://img.shields.io/npm/l/license)"
                     } 
                 },
                 {
@@ -105,7 +105,7 @@ const questions = () => {
                     value: {
                         text: 'GNU AGPLv3',
                         url: "https://choosealicense.com/licenses/agpl-3.0/",
-                        badge: "https://img.shields.io/badge/GNU_AGPv3-License-orange"
+                        badge: "![NPM](https://img.shields.io/badge/GNU_AGPv3-License-orange)"
                     }
                 },
                 {
@@ -113,7 +113,8 @@ const questions = () => {
                     value: {
                         text: 'Mozilla',
                         url: "https://choosealicense.com/licenses/mpl-2.0/",
-                        badge: "https://img.shields.io/badge/Mozilla-License-orange"
+                        badge: "![NPM](https://img.shields.io/badge/Mozilla-License-orange)"
+                        
                     } 
                 },
                 {
@@ -121,7 +122,7 @@ const questions = () => {
                     value: {
                         text: 'The Unlicense',
                         url: "https://choosealicense.com/licenses/unlicense/",
-                        badge: "https://img.shields.io/badge/Unlicense-License-orange"
+                        badge: "![NPM](https://img.shields.io/badge/Unlicense-License-orange)"
                     } 
                 }
             ]
